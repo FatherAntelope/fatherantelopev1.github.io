@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="fatherui.css">
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+    <script src="path/baffle.min.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet">
+    <title>Владлен Горбунов</title>
+</head>
+<body>
+
+<div class="ui dimmer">
+    <div class="text_animation">
+        FatherAntelope
+    </div>
+</div>
+
+
+
+<div class="ui progressbar" id="progressBar"></div>
+<div class="scroll_path"></div>
+<div class="ui navigation">
+
+    <a href="#home" class="logo">FatherAntelope</a>
+    <div class="toggle"></div>
+    <ul class="menu">
+        <li><a href="#about"> Обо мне </a></li>
+        <li><a href="#skills"> Навыки </a></li>
+        <li><a href="#progress"> Достижения </a></li>
+        <li><a href="#projects"> Проекты </a></li>
+        <li><a href="#education"> Образование </a></li>
+        <li><a href="#resume"> Резюме </a></li>
+        <li><a href="#contacts"> Контакты </a></li>
+    </ul>
+</div>
+
+
+    <!--
+    <div class="ui navbar">
+        <div class="ui maker" id="maker"></div>
+        <a href="#"> Обо мне </a>
+        <a href="#"> Навыки </a>
+        <a href="#"> Достижения </a>
+        <a href="#"> Проекты </a>
+        <a href="#"> Образование </a>
+        <a href="#"> Резюме </a>
+        <a href="#"> Контакты </a>
+    </div>
+    -->
+    <div class="ui banner image section" id="home">
+        <div class="text_box parallax" data-speed="2">
+            <h2>Привет, меня зовут <br><span>Владлен</span></h2>
+            <h3>Я студентом-любитель в сфере web-разработки</h3>
+            <a href="#contacts" class="btn"><span>Связаться со мной</span></a>
+        </div>
+        <div class="image_box parallax"  data-speed="2">
+            <img src="im.png">
+        </div>
+    </div>
+
+
+    <div class="ui section light" id="about">
+        <div class="card">
+            <div class="content">
+                <h1>Обо мне</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur consequuntur, cumque debitis deserunt earum eligendi explicabo harum, illum inventore itaque molestias nobis odit officia officiis perferendis perspiciatis provident quasi quibusdam quod rem repellat rerum sapiente sequi sint tempore vero voluptatem voluptatum. Alias delectus ducimus ea officia repudiandae, tempora voluptates. Adipisci?</p>
+            </div>
+            <div class="image_box"></div>
+        </div>
+    </div>
+
+
+    <div class="ui section dark" id="skills">
+        <header>Навыки</header>
+        <div class="skills">
+            <div class="set">
+                <span class="fas fa-globe"></span>
+                <header>WEB</header>
+                <div class="list">
+                    <label>HTML</label>
+                    <i class="fab fa-html5"></i>
+                </div>
+                <div class="list">
+                    <label>CSS</label>
+                    <i class="fab fa-css3-alt"></i>
+                </div>
+            </div>
+
+            <div class="set">
+                <span class="fas fa-globe"></span>
+                <header>Frameworks</header>
+                <div class="list">
+                    <label>HTML</label>
+                    <i class="fab fa-html5"></i>
+                </div>
+                <div class="list">
+                    <label>CSS</label>
+                    <i class="fab fa-css3-alt"></i>
+                </div>
+            </div>
+
+            <div class="set">
+                <span class="fas fa-globe"></span>
+                <header>Frameworks</header>
+                <div class="list">
+                    <label>HTML</label>
+                    <i class="fab fa-html5"></i>
+                </div>
+                <div class="list">
+                    <label>CSS</label>
+                    <i class="fab fa-css3-alt"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui progress" id="progress">
+
+    </div>
+
+    <div class="ui projects" id="projects">
+
+    </div>
+
+    <div class="ui education" id="education">
+
+    </div>
+
+    <div class="ui resume" id="resume">
+
+    </div>
+
+    <div class="ui contacts" id="contacts">
+
+    </div>
+
+
+
+
+<script type="text/javascript">
+    let progressBar = document.getElementById('progressBar');
+    let totalPBHeight = document.body.scrollHeight - window.innerHeight;
+    window.onscroll = function () {
+        let progressBarHeight = (window.pageYOffset / totalPBHeight) * 100;
+        progressBar.style.height = progressBarHeight + "%";
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+
+    window.addEventListener('scroll', function () {
+        let header = document.querySelector('.ui.navigation');
+        header.classList.toggle('sticky', window.scrollY > 0);
+    });
+
+    ///////////////////////////////////////////////////////////////////////////
+
+    document.addEventListener("mousemove", parallax);
+    function parallax(e) {
+        this.querySelectorAll('.parallax').forEach(parallax => {
+            const speed = parallax.getAttribute('data-speed');
+            const x = (window.innerWidth - e.pageX * speed) / 200;
+            const y = (window.innerHeight - e.pageY * speed) / 100;
+            parallax.style.transform = `translateX(${x}px) translateY(${y}px)`
+        })
+
+    }
+</script>
+<script>
+    /*
+    gsap.to(".one", 2, {delay: .3, top: "-100%", ease: Expo.easeInOut});
+    gsap.to(".two", 2, {delay: .5, top: "-100%", ease: Expo.easeInOut});
+    gsap.to(".three", 2, {delay: .7, top: "-100%", ease: Expo.easeInOut});
+    gsap.to(".four", 2, {delay: .9, top: "-100%", ease: Expo.easeInOut});
+    */
+    gsap.to(".ui.dimmer", 1, {delay: 2, top: "-100%", ease: Expo.easeInOut});
+    gsap.from('.image_box.parallax', {opacity: 0, duration: 1, delay: 2.3, x: 60});
+    gsap.from('.ui.banner.image.section .text_box.parallax', {opacity: 0, duration: 1, delay: 2.3, x: -60});
+    gsap.from('.ui.navigation', {opacity: 0, duration: 1, delay: 2.3, y: 40});
+</script>
+<script>
+    const text = baffle(".text_animation");
+    text.set({
+       characters: '▓▓/ █▒▓▒/ <▒▓>',
+        speed: 120
+    });
+    text.start();
+    text.reveal(3100);
+</script>
+</body>
+</html>
