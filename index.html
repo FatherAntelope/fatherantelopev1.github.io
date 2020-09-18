@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<div class="ui dimmer">
+<div class="ui dimmer" id="glitch">
     <div class="text_animation">
         FatherAntelope
     </div>
@@ -65,7 +65,7 @@
 
 
     <div class="ui section light" id="about">
-        <div class="card">
+        <div class="card-up">
             <div class="content">
                 <h1>Обо мне</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur consequuntur, cumque debitis deserunt earum eligendi explicabo harum, illum inventore itaque molestias nobis odit officia officiis perferendis perspiciatis provident quasi quibusdam quod rem repellat rerum sapiente sequi sint tempore vero voluptatem voluptatum. Alias delectus ducimus ea officia repudiandae, tempora voluptates. Adipisci?</p>
@@ -75,47 +75,74 @@
     </div>
 
 
-    <div class="ui section dark" id="skills">
-        <header>Навыки</header>
-        <div class="skills">
-            <div class="set">
-                <span class="fas fa-globe"></span>
-                <header>WEB</header>
-                <div class="list">
-                    <label>HTML</label>
-                    <i class="fab fa-html5"></i>
+    <div class="ui section-card" id="skills">
+        <div class="container">
+            <div class="card">
+                <div class="imgBx" data-text="Web">
+                    <img src="web.svg" alt="">
                 </div>
-                <div class="list">
-                    <label>CSS</label>
-                    <i class="fab fa-css3-alt"></i>
+                <div class="content">
+                    <div>
+                        <h3>Web</h3>
+                        <ul>
+                            <li><p>HTML</p></li>
+                            <li><p>CSS</p></li>
+                            <li><p>PHP</p></li>
+                            <li><p>JS</p></li>
+                            <li><p>MySQL</p></li>
+                            <li><p>DynamoDB</p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="imgBx" data-text="Desktop">
+                    <img src="desktop.svg" alt="">
+                </div>
+                <div class="content">
+                    <div>
+                        <h3>Desktop</h3>
+                        <ul>
+                            <li><p>C++</p></li>
+                            <li><p>C#</p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="imgBx" data-text="Framework">
+                    <img src="framework.svg" alt="">
+                </div>
+                <div class="content">
+                    <div>
+                        <h3>Framework</h3>
+                        <ul>
+                            <li><p>Bootstrap</p></li>
+                            <li><p>Materialize</p></li>
+                            <li><p>Semantic UI</p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="imgBx" data-text="Other">
+                    <img src="other.svg" alt="">
+                </div>
+                <div class="content">
+                    <div>
+                        <h3>Other</h3>
+                        <ul>
+                            <li><p>MS Word</p></li>
+                            <li><p>MS Excel</p></li>
+                            <li><p>MS PowerPoint</p></li>
+                            <li><p>MS Access</p></li>
+                            <li><p>MS Windows (опытный)</p></li>
+                            <li><p>Git</p></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <div class="set">
-                <span class="fas fa-globe"></span>
-                <header>Frameworks</header>
-                <div class="list">
-                    <label>HTML</label>
-                    <i class="fab fa-html5"></i>
-                </div>
-                <div class="list">
-                    <label>CSS</label>
-                    <i class="fab fa-css3-alt"></i>
-                </div>
-            </div>
-
-            <div class="set">
-                <span class="fas fa-globe"></span>
-                <header>Frameworks</header>
-                <div class="list">
-                    <label>HTML</label>
-                    <i class="fab fa-html5"></i>
-                </div>
-                <div class="list">
-                    <label>CSS</label>
-                    <i class="fab fa-css3-alt"></i>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -169,6 +196,16 @@
         })
 
     }
+    /*
+    const currentLocation = location.href;
+    const menuItem = document.querySelectorAll('a');
+    const menuLength = menuItem.length;
+    for (let i = 0; i < menuLength; i++) {
+        if (menuItem[i].href === currentLocation) {
+            menuItem[i].className = "active";
+        }
+    }
+     */
 </script>
 <script>
     /*
@@ -183,6 +220,27 @@
     gsap.from('.ui.navigation', {opacity: 0, duration: 1, delay: 2.3, y: 40});
 </script>
 <script>
+    /*
+    let bg = document.getElementById('glitch');
+    let count = 20;
+    for(let i = 0; i < count; i++) {
+        let glitchBox = document.createElement('div');
+        glitchBox.className = 'box';
+        bg.appendChild(glitchBox);
+    }
+
+    setInterval(function () {
+        let glitch = document.getElementsByClassName('box');
+        for (let i = 0; i < glitch.length; i++) {
+            glitch[i].style.left = Math.floor(Math.random() * 100) + 'vw';
+            glitch[i].style.top = Math.floor(Math.random() * 100) + 'vh';
+            glitch[i].style.width = Math.floor(Math.random() * 400) + 'px';
+            glitch[i].style.height = Math.floor(Math.random() * 100) + 'px';
+            glitch[i].style.background = Math.floor(Math.random() * 50) + 'px';
+        }
+    }, 200);
+     */
+
     const text = baffle(".text_animation");
     text.set({
        characters: '▓▓/ █▒▓▒/ <▒▓>',
@@ -190,6 +248,10 @@
     });
     text.start();
     text.reveal(3100);
+
+
+
 </script>
+
 </body>
 </html>
