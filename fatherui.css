@@ -14,6 +14,7 @@ body
 
 .ui.dimmer
 {
+    overflow: hidden;
     position: absolute;
     top: 0;
     left: 0;
@@ -251,7 +252,7 @@ body
 .ui.banner.image
 {
     padding: 100px;
-    background: url(background.jpeg);
+    background: url(background.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -322,7 +323,7 @@ body
     color: #00897B;
     text-decoration: none;
     font-weight: 900;
-    font-size: 18px;
+    font-size: 24px;
 }
 
 .btn:hover{
@@ -484,6 +485,10 @@ body
 
 .ui.section-card .container .card:hover .imgBx img
 {
+    box-shadow: 0 0 5px #00897b,
+    0 0 25px #00897b,
+    0 0 50px #00897b,
+    0 0 25px #00897b;
     max-width: 100px;
 }
 
@@ -501,6 +506,20 @@ body
 
 .ui.section-card .container .card .content h3
 {
+    color: #00897b;
+    font-weight: 900;
     margin-bottom: 5px;
     font-size: 2em;
+}
+
+.ui.section-card .container .card .content ul
+{
+    list-style: none;
+}
+
+.ui.section-card .container .card .content ul li p
+{
+    color: #282828;
+    font-weight: 800;
+    font-size: 1.5em;
 }
