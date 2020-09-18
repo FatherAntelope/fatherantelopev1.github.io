@@ -547,12 +547,14 @@ body
     font-weight: 900;
     margin: 10px 0;
 }
+
 .ui.footer .art .footer-contacts .footer-icon
 {
     font-size: 1.5em;
     color: #969696;
     margin: 0 10px;
 }
+
 .ui.footer .art .footer-contacts .footer-icon:hover
 {
     color: #ffffff;
