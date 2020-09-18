@@ -180,7 +180,7 @@ body
 
 
 
-@media (min-width: 768px) and (max-width: 991px)
+@media screen and (max-width: 991px)
 {
 
     .ui.banner
@@ -399,8 +399,8 @@ body
     width: calc(30% + 50px);
     height: 100%;
     box-sizing: border-box;
-    border-left: 100px solid #00564d;
-    border-bottom: 500px solid transparent;
+    border-left: 10vw solid #00564d;
+    border-bottom: 70vh solid transparent;
 }
 
 /*************************************************/
@@ -522,4 +522,44 @@ body
     color: #282828;
     font-weight: 800;
     font-size: 1.5em;
+}
+
+
+/**********************************************************************/
+
+.ui.footer
+{
+    background-color: #00897b;
+    color: #ffffff;
+    text-align: center;
+}
+.ui.footer .art
+{
+    padding: 0;
+    background-color: #00564d;
+    padding-top: 48px;
+    clip-path: polygon(0% 5%, 15% 0%, 100% 10%, 100% 100%, 0% 100%);
+}
+
+.ui.footer .art .footer-title
+{
+    font-size: 2.5em;
+    font-weight: 900;
+    margin: 10px 0;
+}
+.ui.footer .art .footer-contacts .footer-icon
+{
+    font-size: 1.5em;
+    color: #969696;
+    margin: 0 10px;
+}
+.ui.footer .art .footer-contacts .footer-icon:hover
+{
+    color: #ffffff;
+}
+
+.ui.footer .art p
+{
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
